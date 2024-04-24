@@ -47,3 +47,19 @@ function getWeatherFromZip() {
         console.error('Error fetching weather data:', error);
       });
   }
+
+
+  const styles = StyleSheet.create({
+    container: {
+     flex: 1,
+     paddingTop: 50,
+     paddingHorizontal: 10,
+     backgroundColor: 'blue',
+    },
+    item: {
+      paddingVertical: 10,
+      borderWidth: 1,
+      borderColor: 'green',
+      paddingHorizontal: 10,
+    },
+  });  
