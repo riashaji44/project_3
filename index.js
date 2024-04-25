@@ -39,7 +39,6 @@ function displayWeatherInfo(data){
   const tempDisplay = document.createElement("p");
   const humidityDisplay = document.createElement("p");
   const descDisplay = document.createElement("p");
-  const weatherEmoji = document.createElement("p");
 
   // SET TEXT CONTENTS TO DATA
   cityDisplay.textContent = `${city}`;
