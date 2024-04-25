@@ -32,7 +32,6 @@ function displayWeatherInfo(data){
 
   // CLEAR HTML //
   card.textContent = "";
-  card.style.display = "flex";
 
   // CREATE NEW ELEMENTS
   const cityDisplay = document.createElement("h1");
@@ -42,9 +41,9 @@ function displayWeatherInfo(data){
 
   // SET TEXT CONTENTS TO DATA
   cityDisplay.textContent = `${city}`;
-  tempDisplay.textContent = `${temp}`;
+  tempDisplay.textContent = `Temperature: ${temp}`;
   humidityDisplay.textContent = `humidity: ${humidity}%`
-  descDisplay.textContent = `${description}`;
+  descDisplay.textContent = `Description: ${description}`;
 
   // ADD NEW TEXT TO HTML PAGE
   card.appendChild(cityDisplay);
