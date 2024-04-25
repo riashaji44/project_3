@@ -70,7 +70,6 @@ function displayWeatherInfo(data){
     emoji.textContent='🌨️';
   }
 
-
   // ADD NEW TEXT TO HTML PAGE
   card.appendChild(cityDisplay);
   card.appendChild(tempDisplay);

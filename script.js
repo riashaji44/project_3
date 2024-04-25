@@ -59,3 +59,24 @@ function getWeatherFromZip() {
         console.error('Error fetching weather data:', error);
       });
   }
+
+
+  //GETTING FORECAST BY CITY NAME
+const url4 = `https://api.openweathermap.org/data/2.5/forecast/daily?q=${cityName}&&appid=${apiKey}`;
+
+function forecastByCityName() {
+  fetch(url4)
+  .then(response => response.json())
+  .then(data => {
+    console.log(data);
+        const {temp, feels_like, temp_min, temp_max, humidity} = data.main;
+        document.getElementById("temperature").innerText = `Temperature: ${temp}`;
+        document.getElementById("feels_like").innerText = `Feels like: ${feels_like}`;
+        document.getElementById("temp_min").innerText = `Min. Temp: ${temp_min}`;
+        document.getElementById("temp_max").innerText = `Max. Temp: ${temp_max}`;
+        document.getElementById("humidity").innerText = `Humidity: ${humidity}`;
+      })
+      .catch(error => {
+        console.error('Error fetching weather data:', error);
+      });
+  }
