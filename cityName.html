@@ -1,10 +1,32 @@
-<html>
-    <head>
-        <title>Weather By City Name</title>
-    </head>
-    <body>
-        <h1>Weather By City Name</h1>
-        <button type = "button" onclick=function()>Click For Weekly Forecast</button>
-        <button type = "button"><a href="index.html">Go Back</a></button>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
 
+    <form class="weatherName">
+        <input type="text" class="cityInput" placeholder="Enter City">
+        <button type="submit">Get Weather</button>
+    </form>
+
+    <div class="card">
+        <hi1 class="cityDisplay"></hi1>
+        <p class="tempDisplay"></p>
+        <p class="humidityDisplay"></p>
+        <p class="descDisplay"></p>
+        <p class="weatherEmoji"></p>
+        <p class="errorDisplay"></p>
+    </div>
+
+    <body>
+        <button type = "button"><a href="index.html">Go Back</a></button>
     </body>
+
+    <script src="index.js"></script>
+
+</body>
+</html>
