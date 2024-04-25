@@ -1,6 +1,6 @@
 const apiKey = "fd5a21749be0469006e9da6916ca2240";
 const cityName = document.getElementById("cityName").value;
-const url1 = 'https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}';
+const url1 = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}`;
 
 function getWeatherFromName() {
   fetch(url1)
@@ -8,7 +8,11 @@ function getWeatherFromName() {
   .then(data => {
     console.log(data);
         const {temp, feels_like, temp_min, temp_max, humidity} = data.main;
-        const weather = '${temp},${feels_like},${temp_min},${temp_max},${humidity}';
+        document.getElementById("temperature").innerText = `Temperature: ${temp}`;
+        document.getElementById("feels_like").innerText = `Feels like: ${feels_like}`;
+        document.getElementById("temp_min").innerText = `Min. Temp: ${temp_min}`;
+        document.getElementById("temp_max").innerText = `Max. Temp: ${temp_max}`;
+        document.getElementById("humidity").innerText = `Humidity: ${humidity}`;
       })
       .catch(error => {
         console.error('Error fetching weather data:', error);
@@ -16,7 +20,7 @@ function getWeatherFromName() {
   }
 
 const cityID = document.getElementById("cityID").value;
-const url2 = 'https://api.openweathermap.org/data/2.5/weather?id=${cityID}&appid=${apiKey}';
+const url2 = `https://api.openweathermap.org/data/2.5/weather?id=${cityID}&appid=${apiKey}`;
 
 function getWeatherFromID() {
   fetch(url2)
@@ -24,7 +28,11 @@ function getWeatherFromID() {
   .then(data => {
     console.log(data);
         const {temp, feels_like, temp_min, temp_max, humidity} = data.main;
-        const weather = '${temp},${feels_like},${temp_min},${temp_max},${humidity}';
+        document.getElementById("temperature").innerText = `Temperature: ${temp}`;
+        document.getElementById("feels_like").innerText = `Feels like: ${feels_like}`;
+        document.getElementById("temp_min").innerText = `Min. Temp: ${temp_min}`;
+        document.getElementById("temp_max").innerText = `Max. Temp: ${temp_max}`;
+        document.getElementById("humidity").innerText = `Humidity: ${humidity}`;
       })
       .catch(error => {
         console.error('Error fetching weather data:', error);
@@ -33,7 +41,7 @@ function getWeatherFromID() {
 
 const zipCode = document.getElementById("zipCode").value;
 const countryCode = document.getElementById("countryCode").value;
-const url3 = 'https://api.openweathermap.org/data/2.5/weather?zip=${zipCode},${countryCode}&appid=${apiKey}';
+const url3 = `https://api.openweathermap.org/data/2.5/weather?zip=${zipCode},${countryCode}&appid=${apiKey}`;
 
 function getWeatherFromZip() {
   fetch(url3)
@@ -41,7 +49,11 @@ function getWeatherFromZip() {
   .then(data => {
     console.log(data);
         const {temp, feels_like, temp_min, temp_max, humidity} = data.main;
-        const weather = '${temp},${feels_like},${temp_min},${temp_max},${humidity}';
+        document.getElementById("temperature").innerText = `Temperature: ${temp}`;
+        document.getElementById("feels_like").innerText = `Feels like: ${feels_like}`;
+        document.getElementById("temp_min").innerText = `Min. Temp: ${temp_min}`;
+        document.getElementById("temp_max").innerText = `Max. Temp: ${temp_max}`;
+        document.getElementById("humidity").innerText = `Humidity: ${humidity}`;
       })
       .catch(error => {
         console.error('Error fetching weather data:', error);
