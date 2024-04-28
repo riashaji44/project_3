@@ -13,6 +13,7 @@ weatherName.addEventListener("submit", async event => {
 
   const city = cityInput.value;
 
+
   if(city){
         const weatherData = await getWeatherData(city);
         displayWeatherInfo(weatherData)
@@ -24,6 +25,7 @@ async function getWeatherData(city){
 
   return await response.json();
 }
+
 
 function displayWeatherInfo(data){
   const {name: city, 
@@ -50,6 +52,9 @@ function displayWeatherInfo(data){
   card.appendChild(tempDisplay);
   card.appendChild(humidityDisplay);
   card.appendChild(descDisplay);
+
 }
+
+
 
 
