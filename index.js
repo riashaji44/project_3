@@ -77,11 +77,8 @@ function displayWeatherInfo(data){
   card.appendChild(tempDisplay);
   card.appendChild(humidityDisplay);
   card.appendChild(descDisplay);
-<<<<<<< HEAD
 
-=======
   card.appendChild(emoji);
->>>>>>> 1da020fc5d4db2ff684111fe7e9741bd82f95256
 }
 
 
