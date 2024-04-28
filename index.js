@@ -40,19 +40,48 @@ function displayWeatherInfo(data){
   const tempDisplay = document.createElement("p");
   const humidityDisplay = document.createElement("p");
   const descDisplay = document.createElement("p");
+  const emoji = document.createElement("p");
 
   // SET TEXT CONTENTS TO DATA
   cityDisplay.textContent = `${city}`;
   tempDisplay.textContent = `Temperature: ${temp}`;
   humidityDisplay.textContent = `humidity: ${humidity}%`
   descDisplay.textContent = `Description: ${description}`;
+  if(description=='clear sky'){
+  emoji.textContent = '☀️';
+  }
+  else if(description=='few clouds'){
+    emoji.textContent = '🌤️';
+    }
+  else if(description=='scattered clouds'){
+      emoji.textContent = '⛅';
+    }
+  else if(description=='broken clouds'){
+      emoji.textContent = '🌥️';
+    }
+  else if(description=='overcast clouds'){
+    emoji.textContent = '☁️';
+  }
+  else if(description.includes('rain')){
+      emoji.textContent='🌧️'
+    }
+  else if(description.includes('thunderstorm')){
+    emoji.textContent='⛈️';
+  }
+  else if(description.includes('snow')){
+    emoji.textContent='🌨️';
+  }
 
   // ADD NEW TEXT TO HTML PAGE
   card.appendChild(cityDisplay);
   card.appendChild(tempDisplay);
   card.appendChild(humidityDisplay);
   card.appendChild(descDisplay);
+<<<<<<< HEAD
 
+=======
+  card.appendChild(emoji);
+>>>>>>> 1da020fc5d4db2ff684111fe7e9741bd82f95256
 }
 
 
