@@ -77,7 +77,6 @@ function displayWeatherInfo(data){
   card.appendChild(tempDisplay);
   card.appendChild(humidityDisplay);
   card.appendChild(descDisplay);
-
   card.appendChild(emoji);
 }
 

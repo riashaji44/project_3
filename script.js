@@ -43,7 +43,7 @@ function fetchWeather(url) {
       const weatherInfo = document.getElementById("weatherInfo");
 
       const weatherHtml = `
-        <p>Name: ${name} </p>
+        <p>City: ${name} </p>
         <p>Temperature: ${temp} °F</p>
         <p>Humidity: ${humidity}%</p>
         <p>Description: ${description} </p>
@@ -64,21 +64,65 @@ function fetchForecast(url) {
       const forecastInfo = document.getElementById("forecastInfo");
       forecastInfo.innerHTML = "";
 
+      const header = document.getElementById("header");
+      header.innerHTML = "";
+   
       data.list.forEach(forecast => {
         const { dt_txt, main: { temp }, weather: [{ description }] } = forecast;
 
+      let emoji = ``;
+        
+      if(description=='clear sky'){
+        emoji = `☀️`;
+      }
+      else if(description=='few clouds'){
+        emoji = '🌤️';
+        }
+      else if(description=='scattered clouds'){
+          emoji = '⛅';
+        }
+      else if(description=='broken clouds'){
+        emoji = '🌥️';
+        }
+      else if(description=='overcast clouds'){
+        emoji = '☁️';
+      }
+      else if(description.includes('rain')){
+        emoji='🌧️'
+      }
+      else if(description.includes('thunderstorm')){
+        emoji='⛈️';
+      }
+      else if(description.includes('snow')){
+        emoji='🌨️';
+      }
+    
+        const headerHTML = ` 
+        <span class = "head"><tr>
+        <span class = "head"><th>Date and Time</th></span>
+        <span class = "head"><th>Temperature</th></span>
+        <span class = "head"><th>Description</th></span>
+      </tr>
+      `;
+
         const forecastHtml = `
-          <div class="forecast-item">
-            <p>Date/Time: ${dt_txt}</p>
-            <p>Temperature: ${temp} °F</p>
-            <p>Description: ${description}</p>
+          
+        <div class="head">
+          <span><tr>
+            <span class = "data"><td>${dt_txt}</td></span>
+            <span class = "data"><td> ${temp}°F</td></span>
+            <span class = "data"><td> ${description} ${emoji}</td></span>
+          <tr></span>
+
           </div>
         `;
-
+        header.innerHTML = headerHTML;
         forecastInfo.innerHTML += forecastHtml;
       });
     })
+    
     .catch(error => {
       console.error('Error fetching forecast data:', error);
     });
+    
 }

@@ -10,9 +10,36 @@
     margin: 4px 2px;
     cursor: pointer;
   }
- 
 
+.head{
+    padding: 100px;
+    font-weight: bold;
+}
 
+.data{
+    text-align: center;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: solid;
+    border-top-left-radius: 1em 1em; 
+    border-top-right-radius: 1em 1em;
+    border-bottom-right-radius: 1em 1em;
+    border-bottom-left-radius: 1em 1em;
+    background-color: rgb(54, 149, 181);
+    color: white;
+
+}
+
+.whole{
+    width: 1200px;
+    background-color: green;
+}
+
+.border{
+    border: 1px solid;
+}
 
 body{
     font-family: Arial, sans-serif;
