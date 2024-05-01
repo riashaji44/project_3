@@ -131,10 +131,10 @@ function fetchForecast(url) {
       }
     
         const headerHTML = ` 
-        <span class = "head"><tr>
-        <span class = "head"><th>Date and Time</th></span>
-        <span class = "head"><th>Temperature</th></span>
-        <span class = "head"><th>Description</th></span>
+        <span class = "head1"><tr>
+        <span class = "head1"><th>Date and Time</th></span>
+        <span class = "head1"><th>Temperature</th></span>
+        <span class = "head1"><th>Description</th></span>
       </tr>
       `;
 
