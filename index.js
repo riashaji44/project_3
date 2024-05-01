@@ -26,6 +26,14 @@ async function getWeatherData(city){
   return await response.json();
 }
 
+// Forecast by city name
+function getForecastFromName() {
+  const city = cityInput.value;
+  const url = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${api_Key}&units=${units}`;
+
+  fetchForecast(url);
+}
+
 
 function displayWeatherInfo(data){
   const {name: city, 
@@ -78,6 +86,78 @@ function displayWeatherInfo(data){
   card.appendChild(humidityDisplay);
   card.appendChild(descDisplay);
   card.appendChild(emoji);
+}
+
+//Forecast function
+function fetchForecast(url) {
+  fetch(url)
+    .then(response => response.json())
+    .then(data => {
+      console.log(data);
+      const forecastInfo = document.getElementById("forecastInfo");
+      forecastInfo.innerHTML = "";
+
+      const header = document.getElementById("header");
+      header.innerHTML = "";
+   
+      data.list.forEach(forecast => {
+        const { dt_txt, main: { temp }, weather: [{ description }] } = forecast;
+
+      let emoji = ``;
+        
+      if(description=='clear sky'){
+        emoji = `☀️`;
+      }
+      else if(description=='few clouds'){
+        emoji = '🌤️';
+        }
+      else if(description=='scattered clouds'){
+          emoji = '⛅';
+        }
+      else if(description=='broken clouds'){
+        emoji = '🌥️';
+        }
+      else if(description=='overcast clouds'){
+        emoji = '☁️';
+      }
+      else if(description.includes('rain')){
+        emoji='🌧️'
+      }
+      else if(description.includes('thunderstorm')){
+        emoji='⛈️';
+      }
+      else if(description.includes('snow')){
+        emoji='🌨️';
+      }
+    
+        const headerHTML = ` 
+        <span class = "head"><tr>
+        <span class = "head"><th>Date and Time</th></span>
+        <span class = "head"><th>Temperature</th></span>
+        <span class = "head"><th>Description</th></span>
+      </tr>
+      `;
+
+        const forecastHtml = `
+          
+        <div class="head">
+          <span><tr>
+            <span class = "data"><td>${dt_txt}</td></span>
+            <span class = "data"><td> ${temp}°F</td></span>
+            <span class = "data"><td> ${description} ${emoji}</td></span>
+          <tr></span>
+
+          </div>
+        `;
+        header.innerHTML = headerHTML;
+        forecastInfo.innerHTML += forecastHtml;
+      });
+    })
+    
+    .catch(error => {
+      console.error('Error fetching forecast data:', error);
+    });
+    
 }
 
 

@@ -42,11 +42,38 @@ function fetchWeather(url) {
       const [{description}] = data.weather;
       const weatherInfo = document.getElementById("weatherInfo");
 
+      let emoji = ``;
+
+      if(description=='clear sky'){
+        emoji = `☀️`;
+      }
+      else if(description=='few clouds'){
+        emoji = '🌤️';
+        }
+      else if(description=='scattered clouds'){
+          emoji = '⛅';
+        }
+      else if(description=='broken clouds'){
+        emoji = '🌥️';
+        }
+      else if(description=='overcast clouds'){
+        emoji = '☁️';
+      }
+      else if(description.includes('rain')){
+        emoji='🌧️'
+      }
+      else if(description.includes('thunderstorm')){
+        emoji='⛈️';
+      }
+      else if(description.includes('snow')){
+        emoji='🌨️';
+      }
+
       const weatherHtml = `
         <p>City: ${name} </p>
         <p>Temperature: ${temp} °F</p>
         <p>Humidity: ${humidity}%</p>
-        <p>Description: ${description} </p>
+        <p>Description: ${description} ${emoji}</p>
       `;
 
       weatherInfo.innerHTML = weatherHtml;
