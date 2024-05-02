@@ -7,11 +7,14 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
+    <h1>Weather By City Name</h1>
+    <label for="cityID">City Name:</label>
     <form class="weatherName">
-        <input type="text" class="cityInput" placeholder="Enter City">
-        <button type="submit">Get Weather</button>
-        <button type="button" onclick="getForecastFromName()">Get Forecast</button>
+        <input class = "cityInput" type="text" class="cityInput" placeholder="Enter City">
+    <div>
+        <button class = "button2" type="submit">Get Weather</button>
+    </div>
+        <button class = "button2" type="button" onclick="getForecastFromName()">Get Forecast</button>
     </form>
 
     <div class="card">
@@ -39,7 +42,7 @@
     </div>
 
     <body>
-        <button type = "button"><a href="index.html">Go Back</a></button>
+        <a class = "back" href="index.html">Go Back</a>
     </body>
 
     <script src="index.js"></script>

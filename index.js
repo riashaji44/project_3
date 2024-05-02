@@ -34,7 +34,6 @@ function getForecastFromName() {
   fetchForecast(url);
 }
 
-
 function displayWeatherInfo(data){
   const {name: city, 
          main: {temp, humidity},
